@@ -1,0 +1,3 @@
+[
+    { "/openvpn/{service_group}/{sid}": "services/openvpn_config" }
+  ]

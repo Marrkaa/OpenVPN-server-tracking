@@ -1,0 +1,17 @@
+local.env
+
+build/
+*.o
+*.so
+
+*~
+*.bak
+*.swp
+
+.vscode/
+.idea/
+
+*.log
+
+/tmp/
+*.tmp
