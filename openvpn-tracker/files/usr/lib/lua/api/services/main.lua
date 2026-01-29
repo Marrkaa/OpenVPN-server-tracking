@@ -29,7 +29,6 @@ local function get_openvpn_servers()
 				end
 			end
 
-
 			local server_name = s.name or s[".name"]
 
 			table.insert(servers, {
@@ -44,7 +43,6 @@ local function get_openvpn_servers()
 	return servers
 end
 
-
 local servers = get_openvpn_servers()
 
 if #servers == 0 then
@@ -52,17 +50,15 @@ if #servers == 0 then
 	os.exit(1)
 end
 
-
 uloop.init()
 local conn = ubus.connect()
 if not conn then
 	error("Failed to connect to ubus")
 end
 
-
 for _, server in ipairs(servers) do
 	local methods = openvpn_ubus.create_service(
-		conn, 
+		conn,
 		server.name,
 		server.mgmt_host,
 		server.mgmt_port

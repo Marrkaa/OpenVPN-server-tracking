@@ -1,3 +1,5 @@
 [
-    { "/openvpn/{service_group}/{sid}": "services/openvpn_config" }
-  ]
+	{ "/openvpn/{service_group}": "services/openvpn" },
+	{ "/openvpn/{service_group}/{server_name}": "services/openvpn" },
+	{ "/openvpn/{service_group}/{server_name}/actions/{sid}": "services/openvpn" }
+]
