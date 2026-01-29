@@ -66,21 +66,6 @@ function M.create_service(conn, server_name, mgmt_host, mgmt_port)
 					end
 				end,
 				{ common_name = ubus.STRING }
-			},
-
-			status = {
-				function(req, msg)
-					local clients, err = openvpn.get_status(mgmt_host, mgmt_port)
-
-					conn:reply(req, {
-						server_name = server_name,
-						management_host = mgmt_host,
-						management_port = mgmt_port,
-						connected = clients ~= nil,
-						client_count = clients and #clients or 0
-					})
-				end,
-				{}
 			}
 		}
 	}
@@ -104,7 +89,7 @@ function M.run(server_name, mgmt_host, mgmt_port)
 
 	print("OpenVPN ubus service started: openvpn." .. server_name)
 	print("  Management: " .. mgmt_host .. ":" .. mgmt_port)
-	print("  Methods: get_clients, kill_client, status")
+	print("  Methods: get_clients, kill_client")
 
 	uloop.run()
 end
