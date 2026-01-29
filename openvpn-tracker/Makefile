@@ -25,6 +25,9 @@ define Package/openvpn-tracker/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/api/services
 	$(INSTALL_BIN) ./files/usr/lib/lua/api/services/*.lua $(1)/usr/lib/lua/api/services/
 	
+	$(INSTALL_DIR) $(1)/usr/lib/rpcd
+	$(INSTALL_BIN) ./files/usr/lib/rpcd/openvpn.lua $(1)/usr/lib/rpcd/openvpn.lua
+	
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/etc/init.d/openvpn-tracking $(1)/etc/init.d/openvpn-tracking
 	
