@@ -51,7 +51,7 @@ function M.send_command(tcp, command)
 			break
 		end
 
-		if line:match("^SUCCESS:") or line:match("^ERROR") then 
+		if line:match("^SUCCESS:") or line:match("^ERROR") then
 			break
 		end
 	end
